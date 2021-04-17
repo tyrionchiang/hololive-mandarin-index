@@ -1,19 +1,20 @@
 import React from 'react';
-import { TalentInfo } from '../../model/talents.model'
+import { withRouter, RouteComponentProps } from 'react-router-dom'
 
-interface Props {
-  talentInfo: TalentInfo
+type Props = RouteComponentProps & {
+  Name: string,
+  Image: string,
+  Text: string
 }
 
-const Talent: React.FC<Props> = props => {
-  const info = props.talentInfo
+const Talent: React.FC<Props> = ({ Name, Image, Text, history, match }) => {
   return (
-    <div className="Talent">
-      <img src={info.Image} alt={info.Name} />
-      <p>{info.Name}</p>
-      <span>{info.Text}</span>
-    </div>
+    <li className="Talent" onClick={() => history.push(`${match.url}${Name}`)}>
+        <img src={Image} alt={Name} />
+        <p>{Name}</p>
+        <span>{Text}</span>
+    </li>
   );
 }
 
-export default Talent;
+export default withRouter(Talent);

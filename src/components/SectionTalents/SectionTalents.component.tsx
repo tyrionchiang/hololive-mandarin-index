@@ -38,12 +38,8 @@ class SectionTalents extends React.Component<Props, State> {
         return (
             <div>
                 <ul>
-                    {talents.map( talent => (
-                        <li key={talent.ID}>
-                            <a href={'/'+talent.Name}>
-                                <Talent talentInfo={talent} />
-                            </a>
-                        </li>
+                    {talents.map(({ID, ...otherSectionProps}) => (
+                        <Talent key={ID} {...otherSectionProps} />
                     ))}
                 </ul>
             </div>
