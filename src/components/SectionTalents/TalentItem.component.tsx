@@ -7,7 +7,7 @@ type Props = RouteComponentProps & {
   Text: string
 }
 
-const Talent: React.FC<Props> = ({ Name, Image, Text, history, match }) => {
+const TalentItem: React.FC<Props> = ({ Name, Image, Text, history, match }) => {
   return (
     <li className="Talent" onClick={() => history.push(`${match.url}${Name}`)}>
         <img src={Image} alt={Name} />
@@ -17,4 +17,4 @@ const Talent: React.FC<Props> = ({ Name, Image, Text, history, match }) => {
   );
 }
 
-export default withRouter(Talent);
+export default withRouter(TalentItem);

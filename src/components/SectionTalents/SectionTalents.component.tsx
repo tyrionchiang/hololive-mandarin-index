@@ -1,6 +1,6 @@
 import React from 'react'
 import api from '../../api/api';
-import Talent from './Talent.component';
+import TalentItem from './TalentItem.component';
 
 import { Talents } from '../../model/talents.model'
 
@@ -39,7 +39,7 @@ class SectionTalents extends React.Component<Props, State> {
             <div>
                 <ul>
                     {talents.map(({ID, ...otherSectionProps}) => (
-                        <Talent key={ID} {...otherSectionProps} />
+                        <TalentItem key={ID} {...otherSectionProps} />
                     ))}
                 </ul>
             </div>
