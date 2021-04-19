@@ -1,4 +1,4 @@
-interface Video {
+export interface Video {
     ID: string,
     Title: string,
     Youtuber: string,

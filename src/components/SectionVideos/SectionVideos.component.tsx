@@ -18,14 +18,13 @@ class SectionVideos extends React.Component<Props, State> {
         }
     }
     componentDidMount() {
-        const _this = this;
         api.getHololiveVideos( this.props.Talent , (res) => {
             if(res.msg){
                 console.log(res.msg)
                 return null
             }
             const videos: Videos = res.data
-            _this.setState({ videos: videos })
+            this.setState({ videos: videos })
         })
     }
     render() {

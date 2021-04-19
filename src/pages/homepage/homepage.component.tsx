@@ -1,10 +1,10 @@
 import React from 'react';
-import SectionMembers from '../../components/SectionTalents/SectionTalents.component';
+import SectionTalents from '../../components/SectionTalents/SectionTalents.component';
 
 function HomePage() {
   return (
     <div className="HomePage">
-      <SectionMembers />
+      <SectionTalents />
     </div>
   );
 }

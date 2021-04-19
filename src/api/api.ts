@@ -17,8 +17,8 @@ export default {
             })
             .catch(function (error) {
                 // handle error
-                console.log("some error: " + error);
-                const res = {data: null, msg: error}
+                console.log(error);
+                const res = {data: null, msg: "some error: " + error}
                 cb(res)
             });
     },
@@ -32,8 +32,8 @@ export default {
             })
             .catch(function (error) {
                 // handle error
-                console.log("some error: " + error);
-                const res = {data: null, msg: error}
+                console.log(error);
+                const res = {data: null, msg: "some error: " + error}
                 cb(res)
             });
     }

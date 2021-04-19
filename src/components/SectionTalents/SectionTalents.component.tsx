@@ -6,34 +6,39 @@ import { Talents } from '../../model/talents.model'
 
 type Props = {}
 type State = {
-    talents: Talents
+    talents: Talents,
+    errorMsg: string
 }
 
 class SectionTalents extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props)
         this.state = {
-            talents: []
+            talents: [],
+            errorMsg: ''
         }
     }
     componentDidMount() {
-        const _this = this;
         api.getHololiveTalents((res) => {
             if(res.msg){
                 console.log(res.msg)
+                this.setState({errorMsg: res.msg})
                 return null
             }
             const talents: Talents = res.data
-            _this.setState({ talents: talents})
+            this.setState({ talents: talents})
         })
     }
     render() {
         const talents = this.state.talents
+        const errMsg = this.state.errorMsg
+        if(errMsg !== '') {
+            return (
+                <h1>{ errMsg }</h1>
+            )
+        }
         if (talents === null) {
             return 'error'
-        }
-        const clicktalentHandler = (text: string) => {
-            console.log(text)
         }
         return (
             <div>

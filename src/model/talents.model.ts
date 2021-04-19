@@ -1,6 +1,6 @@
 interface Talent {
-    ID: number,
-    Name: string,
+    ID: string,
+    Talent: string,
     Image: string,
     Text: string
 }
