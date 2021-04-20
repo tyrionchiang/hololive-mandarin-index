@@ -16,7 +16,12 @@ const TalentItem: React.FC<Props> = ({ ID, Title, Youtuber, Image, Text, history
       window.scroll(0,0)
       return
     }
-    history.push(`/${match.params.talent}/${ID}`)
+    const linkString = `/${match.params.talent}/${ID}`
+    if(match.params.id) {
+      window.location.href = linkString
+      return
+    }
+    history.push(linkString)
     console.log(history, match)
   }
   
